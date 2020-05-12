@@ -43,6 +43,13 @@ const defaultBaseConfig = {
       type: "string",
       base: true
     }
+  },
+  requestInterceptor: {
+    value: `(request) => { \n request.credentials = 'include'; \n return request;\n}\n`,
+    schema: {
+      type: "array",
+      base: true
+    }
   }
 }
 
