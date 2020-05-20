@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swaggerui-deployment
+  labels:
+    app: swaggerui-custom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swaggerui-custom
+  template:
+    metadata:
+      labels:
+        app: swaggerui-custom
+    spec:
+      containers:
+        - name: swaggerui-custom
+          image: marcelo10/swaggerui:latest
+          ports:
+            - containerPort: 8080
